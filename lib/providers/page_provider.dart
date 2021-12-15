@@ -12,8 +12,17 @@ class PageProvider extends ChangeNotifier {
     'location'
   ];
 
+  int _currentIndex = 0;
+
   createScrollController(String routeName) {
     scrollController = PageController(initialPage: getPageIndex(routeName));
+    scrollController.addListener(() {
+      final int index = (scrollController.page ?? 0).round();
+      if (index != _currentIndex) {
+        html.window.history.pushState(null, 'None', '#/${_pages[index]}');
+        _currentIndex = index;
+      }
+    });
   }
 
   int getPageIndex(String routeName) =>
