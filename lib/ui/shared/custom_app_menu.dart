@@ -46,11 +46,31 @@ class _CustomAppMenuState extends State<CustomAppMenu>
                 _MenuTitle(isOpen: isOpen, controller: controller),
                 if (isOpen) ...[
                   //Operador Spread = Si se cumple la condicion de injectan estos elementos a un arreglo
-                  CustomMenuItem(text: 'Home', onPressed: () {}),
-                  CustomMenuItem(text: 'About', onPressed: () {}),
-                  CustomMenuItem(text: 'Pricing', onPressed: () {}),
-                  CustomMenuItem(text: 'Contact', onPressed: () {}),
-                  CustomMenuItem(text: 'Location', onPressed: () {}),
+                  CustomMenuItem(
+                    text: 'Home',
+                    onPressed: () {},
+                    delay: 0,
+                  ),
+                  CustomMenuItem(
+                    text: 'About',
+                    onPressed: () {},
+                    delay: 100,
+                  ),
+                  CustomMenuItem(
+                    text: 'Pricing',
+                    onPressed: () {},
+                    delay: 200,
+                  ),
+                  CustomMenuItem(
+                    text: 'Contact',
+                    onPressed: () {},
+                    delay: 300,
+                  ),
+                  CustomMenuItem(
+                    text: 'Location',
+                    onPressed: () {},
+                    delay: 400,
+                  ),
                   const SizedBox(
                     height: 8,
                   )
