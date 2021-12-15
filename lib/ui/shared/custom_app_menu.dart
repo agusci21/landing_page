@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:vertical_landing_page/providers/page_provider.dart';
 import 'package:vertical_landing_page/ui/shared/custom_menu_item.dart';
 
 class CustomAppMenu extends StatefulWidget {
@@ -23,6 +25,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
@@ -48,27 +51,27 @@ class _CustomAppMenuState extends State<CustomAppMenu>
                   //Operador Spread = Si se cumple la condicion de injectan estos elementos a un arreglo
                   CustomMenuItem(
                     text: 'Home',
-                    onPressed: () {},
+                    onPressed: () => pageProvider.goTo(0),
                     delay: 0,
                   ),
                   CustomMenuItem(
                     text: 'About',
-                    onPressed: () {},
+                    onPressed: () => pageProvider.goTo(1),
                     delay: 100,
                   ),
                   CustomMenuItem(
                     text: 'Pricing',
-                    onPressed: () {},
+                    onPressed: () => pageProvider.goTo(2),
                     delay: 200,
                   ),
                   CustomMenuItem(
                     text: 'Contact',
-                    onPressed: () {},
+                    onPressed: () => pageProvider.goTo(3),
                     delay: 300,
                   ),
                   CustomMenuItem(
                     text: 'Location',
-                    onPressed: () {},
+                    onPressed: () => pageProvider.goTo(4),
                     delay: 400,
                   ),
                   const SizedBox(
