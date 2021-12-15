@@ -12,6 +12,13 @@ class PageProvider extends ChangeNotifier {
     'location'
   ];
 
+  createScrollController(String routeName) {
+    scrollController = PageController(initialPage: getPageIndex(routeName));
+  }
+
+  int getPageIndex(String routeName) =>
+      (!_pages.contains(routeName)) ? 0 : _pages.indexOf(routeName);
+
   goTo(int index) {
     html.window.history.pushState(null, 'None', '#/${_pages[index]}');
     scrollController.animateToPage(index,
